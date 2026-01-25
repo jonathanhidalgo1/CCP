@@ -1,0 +1,16 @@
+{
+  "ccp_version": "0.1",
+  "type": "turn_result",
+  "id": "m_000012",
+  "payload": {
+    "session_id": "ses_abc",
+    "reply": {
+      "text": "Sure! Once upon a time...",
+      "audio_ref": "aud_out_002"
+    },
+    "state": { "emotion": "curious", "energy": 0.72 },
+    "safety": { "blocked": false, "kid_safe_applied": true, "reason": null },
+    "actions": [{ "type": "led", "pattern": "sparkle" }],
+    "meta": { "request_id": "req_999" }
+  }
+}

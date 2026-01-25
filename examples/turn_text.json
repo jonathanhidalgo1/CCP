@@ -1,0 +1,9 @@
+{
+  "ccp_version": "0.1",
+  "type": "turn",
+  "id": "m_000010",
+  "payload": {
+    "session_id": "ses_abc",
+    "input": { "kind": "text", "text": "Tell me a short story." }
+  }
+}

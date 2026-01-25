@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ccp.dev/schemas/hello-ack.json",
+  "title": "CCP hello_ack",
+  "allOf": [
+    { "$ref": "ccp-message.json" },
+    {
+      "properties": {
+        "type": { "const": "hello_ack" },
+        "payload": {
+          "type": "object",
+          "required": ["accepted", "device_id"],
+          "properties": {
+            "accepted": { "type": "boolean" },
+            "device_id": { "type": "string" },
+            "session_supported": { "type": "boolean" },
+            "negotiated": {
+              "type": "object",
+              "properties": {
+                "audio_codec": { "type": "string" },
+                "sample_rate": { "type": "integer" },
+                "max_audio_seconds": { "type": "number" },
+                "preferred_transport": { "type": "string" }
+              },
+              "additionalProperties": true
+            },
+            "limits": {
+              "type": "object",
+              "properties": {
+                "turns_per_min": { "type": "integer" },
+                "tts_seconds_per_min": { "type": "integer" }
+              },
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ccp.dev/schemas/session-start.json",
+  "title": "CCP session_start",
+  "allOf": [
+    { "$ref": "ccp-message.json" },
+    {
+      "properties": {
+        "type": { "const": "session_start" },
+        "payload": {
+          "type": "object",
+          "required": ["device_id"],
+          "properties": {
+            "device_id": { "type": "string" }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ]
+}

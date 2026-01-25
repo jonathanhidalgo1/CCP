@@ -1,0 +1,10 @@
+{
+  "ccp_version": "0.1",
+  "type": "session_started",
+  "id": "m_000004",
+  "payload": {
+    "session_id": "ses_abc",
+    "active_capsule_id": "cap_123",
+    "kid_safe_applied": true
+  }
+}

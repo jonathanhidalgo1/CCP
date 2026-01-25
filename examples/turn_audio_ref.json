@@ -1,0 +1,9 @@
+{
+  "ccp_version": "0.1",
+  "type": "turn",
+  "id": "m_000011",
+  "payload": {
+    "session_id": "ses_abc",
+    "input": { "kind": "audio_ref", "audio_ref": "aud_in_001" }
+  }
+}

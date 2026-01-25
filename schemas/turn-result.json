@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ccp.dev/schemas/turn-result.json",
+  "title": "CCP turn_result",
+  "allOf": [
+    { "$ref": "ccp-message.json" },
+    {
+      "properties": {
+        "type": { "const": "turn_result" },
+        "payload": {
+          "type": "object",
+          "required": ["session_id"],
+          "properties": {
+            "session_id": { "type": "string" },
+            "reply": {
+              "type": "object",
+              "properties": {
+                "text": { "type": "string" },
+                "audio_ref": { "type": "string" }
+              },
+              "additionalProperties": true
+            },
+            "state": { "type": "object", "additionalProperties": true },
+            "safety": {
+              "type": "object",
+              "properties": {
+                "blocked": { "type": "boolean" },
+                "kid_safe_applied": { "type": "boolean" },
+                "reason": { "type": ["string", "null"] }
+              },
+              "additionalProperties": true
+            },
+            "actions": { "type": "array", "items": { "type": "object" } },
+            "meta": { "type": "object", "additionalProperties": true }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ]
+}

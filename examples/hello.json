@@ -1,0 +1,20 @@
+{
+  "ccp_version": "0.1",
+  "type": "hello",
+  "id": "m_000001",
+  "ts": "2026-01-23T18:10:00Z",
+  "payload": {
+    "device_id": "dev_001",
+    "device_token": "devtok_xxx",
+    "firmware": "0.1.0",
+    "capabilities": {
+      "audio_in": { "codecs": ["pcm16", "opus"], "sample_rates": [16000], "channels": 1 },
+      "audio_out": { "codecs": ["pcm16"], "sample_rates": [16000], "channels": 1 },
+      "io": { "button": true, "led": true, "screen": false },
+      "actions": ["led"],
+      "streaming": { "supported": false },
+      "network": { "type": "wifi", "metered": false }
+    },
+    "locale": "pt-BR"
+  }
+}

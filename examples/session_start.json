@@ -1,0 +1,8 @@
+{
+  "ccp_version": "0.1",
+  "type": "session_start",
+  "id": "m_000003",
+  "payload": {
+    "device_id": "dev_001"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "ccp_version": "0.1",
+  "type": "hello_ack",
+  "id": "m_000002",
+  "payload": {
+    "accepted": true,
+    "device_id": "dev_001",
+    "session_supported": true,
+    "negotiated": {
+      "audio_codec": "pcm16",
+      "sample_rate": 16000,
+      "max_audio_seconds": 8,
+      "preferred_transport": "websocket"
+    },
+    "limits": {
+      "turns_per_min": 20,
+      "tts_seconds_per_min": 60
+    }
+  }
+}
