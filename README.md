@@ -22,3 +22,18 @@ CCP standardizes communication between devices (robots, microcontrollers, gatewa
 
 ## Version
 CCP v0.1 (Draft)
+
+## Roadmap
+See [docs/roadmap.md](docs/roadmap.md).
+
+## Community
+Discord: invite link TBD.
+
+## Contributing
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to propose changes and submit PRs.
+
+## Code of Conduct
+See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+
+## Security
+See [SECURITY.md](SECURITY.md).

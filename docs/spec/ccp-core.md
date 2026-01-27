@@ -48,6 +48,28 @@ Example:
 - `session_end` / `session_ended`
 - `error`
 
+## 4.1) Protocol Flow (Sequence)
+```mermaid
+sequenceDiagram
+  autonumber
+  participant D as Device Client
+  participant S as Cortex Capsule Server
+
+  D->>S: hello (auth + capabilities)
+  S-->>D: hello_ack (accepted + negotiated caps)
+
+  D->>S: session_start
+  S-->>D: session_started (session_id)
+
+  D->>S: turn (text or audio_ref)
+  S-->>D: turn_result (text/audio_ref/actions/state)
+
+  D->>S: session_end
+  S-->>D: session_ended
+
+  Note over D,S: error may be sent by either side at any step
+```
+
 Schema details: [message-schemas.md](message-schemas.md)
 
 ## 5) Session
