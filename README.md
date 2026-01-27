@@ -20,6 +20,15 @@ CCP standardizes communication between devices (robots, microcontrollers, gatewa
 3. See schemas: [docs/spec/message-schemas.md](docs/spec/message-schemas.md)
 4. See examples: [examples/](examples)
 
+## How to use CCP
+- This repo is the **specification**, not a dependency to install.
+- Projects should depend on a **CCP SDK** (language/runtime specific) that implements the protocol.
+- If you need JSON schemas in production, the SDK should bundle them or reference a published schema package.
+
+## SDKs (planned)
+- `ccp-python` — reference SDK for capsules/gateways
+- `ccp-esp32` — thin device SDK for microcontrollers
+
 ## Version
 CCP v0.1 (Draft)
 
