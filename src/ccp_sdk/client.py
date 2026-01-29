@@ -96,9 +96,11 @@ class CCPClient:
 
     def upload_audio(self, *, audio_bytes: bytes, content_type: str = "audio/wav") -> str:
         url = f"{self._base_url}/v1/media/audio"
+        headers = {k: v for k, v in self._headers().items() if k.lower() != "content-type"}
+        headers["Content-Type"] = content_type
         resp = self._client.post(
             url,
-            headers={k: v for k, v in self._headers().items() if k.lower() != "content-type"},
+            headers=headers,
             content=audio_bytes,
         )
         if resp.status_code < 200 or resp.status_code >= 300:

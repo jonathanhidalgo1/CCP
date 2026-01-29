@@ -46,6 +46,8 @@ python -m pip install ccp-sdk
 ### Usage
 See a runnable example in [examples/python_client.py](examples/python_client.py).
 
+If your ESP32 sends data to a Python gateway API, see: [examples/esp32_gateway_api/](examples/esp32_gateway_api/).
+
 ## ESP32 note
 ESP32 (Arduino/ESP-IDF) does not run `pip` packages directly.
 
