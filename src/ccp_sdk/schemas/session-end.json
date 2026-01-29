@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ccp.dev/schemas/session-end.json",
+  "title": "CCP session_end",
+  "allOf": [
+    { "$ref": "ccp-message.json" },
+    {
+      "properties": {
+        "type": { "const": "session_end" },
+        "payload": {
+          "type": "object",
+          "required": ["session_id"],
+          "properties": {
+            "session_id": { "type": "string" }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ]
+}

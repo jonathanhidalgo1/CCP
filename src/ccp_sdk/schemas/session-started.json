@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ccp.dev/schemas/session-started.json",
+  "title": "CCP session_started",
+  "allOf": [
+    { "$ref": "ccp-message.json" },
+    {
+      "properties": {
+        "type": { "const": "session_started" },
+        "payload": {
+          "type": "object",
+          "required": ["session_id"],
+          "properties": {
+            "session_id": { "type": "string" },
+            "active_capsule_id": { "type": "string" },
+            "kid_safe_applied": { "type": "boolean" }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ]
+}

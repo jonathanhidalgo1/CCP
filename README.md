@@ -25,6 +25,39 @@ CCP standardizes communication between devices (robots, microcontrollers, gatewa
 - Projects should depend on a **CCP SDK** (language/runtime specific) that implements the protocol.
 - If you need JSON schemas in production, the SDK should bundle them or reference a published schema package.
 
+## Python SDK (reference)
+
+This repository now includes a minimal reference Python SDK that you can install with pip.
+
+### Install (local dev)
+From the repo root:
+
+```bash
+python -m pip install -e .
+```
+
+### Install (from PyPI)
+After you publish it:
+
+```bash
+python -m pip install ccp-sdk
+```
+
+### Usage
+See a runnable example in [examples/python_client.py](examples/python_client.py).
+
+## ESP32 note
+ESP32 (Arduino/ESP-IDF) does not run `pip` packages directly.
+
+Typical architecture:
+- ESP32 handles hardware (mic/speaker/LED/display) and sends events/audio to a gateway over Wi-Fi/serial.
+- The gateway (Raspberry Pi / PC) runs the Python CCP SDK and talks to the CCP server over HTTP.
+
+Practical mapping:
+- Mic (I2S) -> capture audio -> upload to `/v1/media/audio` -> send `turn` with `audio_ref`
+- Speaker (I2S) <- receive `turn_result.payload.reply.audio_ref` -> download audio -> play
+- LED strip / display <- drive UI based on `turn_result.payload.state`, `safety`, or `actions`
+
 ## SDKs (planned)
 - `ccp-python` — reference SDK for capsules/gateways
 - `ccp-esp32` — thin device SDK for microcontrollers

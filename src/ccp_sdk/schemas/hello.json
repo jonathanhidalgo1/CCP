@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ccp.dev/schemas/hello.json",
+  "title": "CCP hello",
+  "allOf": [
+    { "$ref": "ccp-message.json" },
+    {
+      "properties": {
+        "type": { "const": "hello" },
+        "payload": {
+          "type": "object",
+          "required": ["device_id", "device_token", "firmware", "capabilities"],
+          "properties": {
+            "device_id": { "type": "string" },
+            "device_token": { "type": "string" },
+            "firmware": { "type": "string" },
+            "capabilities": {
+              "type": "object",
+              "properties": {
+                "audio_in": {
+                  "type": "object",
+                  "properties": {
+                    "codecs": { "type": "array", "items": { "type": "string" } },
+                    "sample_rates": { "type": "array", "items": { "type": "integer" } },
+                    "channels": { "type": "integer", "minimum": 1 }
+                  },
+                  "additionalProperties": true
+                },
+                "audio_out": {
+                  "type": "object",
+                  "properties": {
+                    "codecs": { "type": "array", "items": { "type": "string" } },
+                    "sample_rates": { "type": "array", "items": { "type": "integer" } },
+                    "channels": { "type": "integer", "minimum": 1 }
+                  },
+                  "additionalProperties": true
+                },
+                "io": {
+                  "type": "object",
+                  "properties": {
+                    "button": { "type": "boolean" },
+                    "led": { "type": "boolean" },
+                    "screen": { "type": "boolean" }
+                  },
+                  "additionalProperties": true
+                },
+                "actions": { "type": "array", "items": { "type": "string" } },
+                "streaming": {
+                  "type": "object",
+                  "properties": { "supported": { "type": "boolean" } },
+                  "additionalProperties": true
+                },
+                "network": {
+                  "type": "object",
+                  "properties": {
+                    "type": { "type": "string" },
+                    "metered": { "type": "boolean" }
+                  },
+                  "additionalProperties": true
+                },
+                "extensions": { "type": "array", "items": { "type": "string" } }
+              },
+              "additionalProperties": true
+            },
+            "locale": { "type": "string" }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ]
+}

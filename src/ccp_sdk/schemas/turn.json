@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ccp.dev/schemas/turn.json",
+  "title": "CCP turn",
+  "allOf": [
+    { "$ref": "ccp-message.json" },
+    {
+      "properties": {
+        "type": { "const": "turn" },
+        "payload": {
+          "type": "object",
+          "required": ["session_id", "input"],
+          "properties": {
+            "session_id": { "type": "string" },
+            "input": {
+              "type": "object",
+              "required": ["kind"],
+              "properties": {
+                "kind": { "type": "string", "enum": ["text", "audio_ref"] },
+                "text": { "type": "string" },
+                "audio_ref": { "type": "string" }
+              },
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ccp.dev/schemas/ccp-message.json",
+  "title": "CCP Message Envelope",
+  "type": "object",
+  "required": ["ccp_version", "type", "id", "payload"],
+  "properties": {
+    "ccp_version": { "type": "string", "enum": ["0.1"] },
+    "type": { "type": "string" },
+    "id": { "type": "string", "minLength": 1 },
+    "ts": { "type": "string", "format": "date-time" },
+    "payload": { "type": "object" }
+  },
+  "additionalProperties": false
+}
