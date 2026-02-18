@@ -31,8 +31,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/<your-org>/<your-repo>"
-Repository = "https://github.com/<your-org>/<your-repo>"
+PyPI = "https://pypi.org/project/ccp-sdk/"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

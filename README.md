@@ -37,7 +37,8 @@ python -m pip install -e .
 ```
 
 ### Install (from PyPI)
-After you publish it:
+Published package:
+https://pypi.org/project/ccp-sdk/
 
 ```bash
 python -m pip install ccp-sdk

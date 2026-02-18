@@ -125,7 +125,7 @@ async def health() -> Dict[str, str]:
     return {"status": "ok"}
 
 
-@app.post("/ccp/hello", response_model=HelloAckMessage)
+@app.post("/ccp/hello", response_model=HelloAckMessage, response_model_exclude_none=True)
 async def hello(message: HelloMessage) -> HelloAckMessage:
     negotiated = {
         "audio_codec": "pcm16",
@@ -145,7 +145,11 @@ async def hello(message: HelloMessage) -> HelloAckMessage:
     )
 
 
-@app.post("/ccp/session/start", response_model=SessionStartedMessage)
+@app.post(
+    "/ccp/session/start",
+    response_model=SessionStartedMessage,
+    response_model_exclude_none=True,
+)
 async def session_start(message: SessionStartMessage) -> SessionStartedMessage:
     return SessionStartedMessage(
         type="session_started",
@@ -155,7 +159,7 @@ async def session_start(message: SessionStartMessage) -> SessionStartedMessage:
     )
 
 
-@app.post("/ccp/turn", response_model=TurnResultMessage)
+@app.post("/ccp/turn", response_model=TurnResultMessage, response_model_exclude_none=True)
 async def turn(message: TurnMessage) -> TurnResultMessage:
     reply_text = None
     reply_audio_ref = None
@@ -179,7 +183,11 @@ async def turn(message: TurnMessage) -> TurnResultMessage:
     )
 
 
-@app.post("/ccp/session/end", response_model=SessionEndedMessage)
+@app.post(
+    "/ccp/session/end",
+    response_model=SessionEndedMessage,
+    response_model_exclude_none=True,
+)
 async def session_end(message: SessionEndMessage) -> SessionEndedMessage:
     return SessionEndedMessage(
         type="session_ended",
